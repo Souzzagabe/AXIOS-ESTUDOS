@@ -4,7 +4,6 @@ const clear = document.querySelector(".clear")
 const repo = document.querySelector("#repos")
 const userName = document.querySelector("#userName")
 
-
 bringRepositoy = () => {
     axios
         .get(`https://api.github.com/users/${userName.value}/repos`)
@@ -12,7 +11,7 @@ bringRepositoy = () => {
             const repos = response.data
             console.log(repos)
 
-            for(i in repos) {
+            for (i in repos) {
                 console.log(repos[i])
 
                 let element = document.createElement("li")
@@ -20,7 +19,6 @@ bringRepositoy = () => {
 
                 repo.appendChild(element)
             }
-
         })
 
         .catch((error) => console.error(error))
@@ -29,6 +27,13 @@ bringRepositoy = () => {
 searchRepository.addEventListener("click", () => {
     bringRepositoy()
 })
+
+userName.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+        bringRepositoy();
+    }
+});
+
 clear.addEventListener("click", () => {
     location.reload()
 })
