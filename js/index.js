@@ -20,7 +20,6 @@ const bringRepository = () => {
                 repo.appendChild(element)
             }
         })
-
         .catch((error) => console.error(error))
 }
 
