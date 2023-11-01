@@ -4,7 +4,7 @@ const clear = document.querySelector(".clear")
 const repo = document.querySelector("#repos")
 const userName = document.querySelector("#userName")
 
-bringRepositoy = () => {
+const bringRepository = () => {
     axios
         .get(`https://api.github.com/users/${userName.value}/repos`)
         .then((response) => {
@@ -25,14 +25,14 @@ bringRepositoy = () => {
 }
 
 searchRepository.addEventListener("click", () => {
-    bringRepositoy()
+    bringRepository()
 })
 
 userName.addEventListener("keyup", (event) => {
     if (event.key === "Enter") {
-        bringRepositoy();
+        bringRepository();
     }
-});
+})
 
 clear.addEventListener("click", () => {
     location.reload()
