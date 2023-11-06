@@ -36,3 +36,4 @@ userName.addEventListener("keyup", (event) => {
 clear.addEventListener("click", () => {
     location.reload()
 })
+
