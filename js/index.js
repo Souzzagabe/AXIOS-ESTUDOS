@@ -1,6 +1,5 @@
 const searchRepository = document.querySelector(".search")
 const clear = document.querySelector(".clear")
-
 const repo = document.querySelector("#repos")
 const userName = document.querySelector("#userName")
 
